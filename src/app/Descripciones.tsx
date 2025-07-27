@@ -11,7 +11,7 @@ export default function Descripciones(props: {
 })
 {
     const habilidadesTecnicas = props.habilidadesTecnicas;
-    let indiceHabilidadTecnica: number = props.indiceHabilidadTecnica;
+    const indiceHabilidadTecnica: number = props.indiceHabilidadTecnica;
 
     
 

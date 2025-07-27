@@ -57,7 +57,7 @@ export default function HabilidadesTecnicas(){
 
   const reducerHabilidadesTecnicas = (state: EstadoHover, action: Accion): EstadoHover => 
   { 
-    var valor = false;
+    let valor = false;
     switch (action.type) 
     { 
       case 'HOVER_IN':  console.log("la wea la wea");
