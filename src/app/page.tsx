@@ -1,6 +1,6 @@
 'use client';
 
-import clsx from "clsx";
+//import clsx from "clsx";
 
 import { useRef, useState } from "react";
 import React, {useReducer} from 'react';
@@ -8,9 +8,9 @@ import HabilidadesTecnicas from "./HabilidadesTecnicas";
 import {EstadoHover, Accion} from "./TiposHover";
 import { motion } from 'framer-motion';
 
-import {useRouter} from 'next/navigation';
+//import {useRouter} from 'next/navigation';
 
-import {useEffect} from 'react';
+//import {useEffect} from 'react';
 
 
 

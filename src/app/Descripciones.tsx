@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+//import { useState } from 'react';
 //import { useEffect } from "react";
 
 export default function Descripciones(props: any)
@@ -11,9 +11,9 @@ export default function Descripciones(props: any)
 
     
 
-    console.log(indiceHabilidadTecnica);
-    console.log("-----------------------------------------");
-    console.log(habilidadesTecnicas);
+    //console.log(indiceHabilidadTecnica);
+    //console.log("-----------------------------------------");
+    //console.log(habilidadesTecnicas);
 
     return (
         <motion.div 
