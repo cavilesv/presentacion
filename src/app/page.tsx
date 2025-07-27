@@ -34,13 +34,13 @@ export default function Home() {
 
   const [descripcionHBlanda, setDescripcionHBlanda] = useState("");
 
-  const [punteroSobreHabilidadBlanda, setearPunteroSobreHabilidadBlanda] = useState(false);
+  //const [punteroSobreHabilidadBlanda, setearPunteroSobreHabilidadBlanda] = useState(false);
 
   const [imagenHBlanda, setURLImagenHBlanda] = useState("");
 
   //const [estaEnPosicionInicial, setEstaEnPosicionInicial] = useState(true);
 
-  const iconoHBlandaRef = useRef(null);
+  //const iconoHBlandaRef = useRef(null);
 
 
     const [contadorReanimacion, setContadorReanimacion] = useState(1);
@@ -60,7 +60,7 @@ export default function Home() {
 
   const reducerHabilidadesBlandas = (state: EstadoHover, action: Accion): EstadoHover => 
                   { 
-                    var valor = false;
+                    let valor = false;
                     switch (action.type) 
                     { 
                       case 'HOVER_IN':                                        

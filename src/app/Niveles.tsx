@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-export default function Niveles(props: any)
+export default function Niveles( props : { habilidadesTecnicas: { nivel: number }[] })
 {
     const habilidadesTecnicas = props.habilidadesTecnicas;
 
@@ -41,7 +41,7 @@ export default function Niveles(props: any)
     return (
         <div className="grid grid-rows-9 w-full h-full border border-pink-300">
             {
-                habilidadesTecnicas.map((habilidad:any, index:number) => (
+                habilidadesTecnicas.map((habilidad:{ nivel: number }, index:number) => (
                     <div key={index} className="grid grid-cols-8 h-full items-center">
                         {getBarraNivel(habilidad.nivel, index)}
                     </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX, useReducer, useRef, useState } from "react";
+import { JSX, useReducer, useState } from "react";
 import { EstadoHover, Accion} from './TiposHover';
 
 import Niveles from './Niveles';
@@ -30,7 +30,9 @@ export default function HabilidadesTecnicas(){
 
   const [descripcionHTecnica, setDescripcionHTecnica] = useState("");
 
-  const [punteroSobreHabilidadTecnica, setearPunteroSobreHabilidadTecnica] = useState(false);
+  
+
+  //const [punteroSobreHabilidadTecnica, setearPunteroSobreHabilidadTecnica] = useState(false);
 
   /* const mostrarDescripcionHabilidadTecnica = () => {
     setearPunteroSobreHabilidadBlanda(true);
