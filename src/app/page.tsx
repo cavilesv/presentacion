@@ -71,6 +71,12 @@ const HabilidadItem = React.memo(
   )
 );
 
+// ✅ Paso 2: asignar displayName explícito
+HabilidadItem.displayName = 'HabilidadItem';
+
+// ✅ Paso 3: memoizar
+
+
 export default function Home() {
   const [estado, dispatch] = useReducer(reducer, initialState);
   const posicionTransform = estado.posicion;
