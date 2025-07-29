@@ -54,7 +54,7 @@ export default function Contacto() {
     setCorreoElectronico(event?.target.value);
   }
 
-  const mensajeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const mensajeHandle = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMensaje(event.target.value);
   }
 
