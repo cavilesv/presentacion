@@ -21,13 +21,13 @@ export default function Descripciones(props: {
 
     return (
         <motion.div 
-            className="grid justify-center items-center bg bg-red-300 h-full"   
+            className="grid justify-center items-center h-full"   
         >
             <motion.p
                 initial={{ opacity:0, translateY: "-150%" }}
                 animate={{ opacity:1, translateY: "0%" }}
                 transition={{ duration: 0.5 }}
-                className="border"
+                className="me-110 mb-17.5 font-bold text-center"
                 key={props.contadorReanimacion}
             >
                 {habilidadesTecnicas[indiceHabilidadTecnica]["descripcion"]}

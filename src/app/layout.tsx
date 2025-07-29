@@ -27,30 +27,34 @@ export default function RootLayout({
   return (
     <html lang="en"
       className="min-h-[100vh] max-h-[100vh] h-[100vh] m-0 p-0"
+      
     >
       
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  min-h-[100%] max-h-[100%] h-[100%] m-0  grid grid-rows-[10%_80%_10%]`}
+        id="root"
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  min-h-[100%] max-h-[100%] h-[100%] m-0 grid grid-rows-[10%_80%_10%] `}
+        style={{background:"linear-gradient(to right, #707fadff, #6076baff, #5069b6ff)"}}
       >
-        <div className="grid grid-cols-[33.3%_33.3%_33.3%] items-center justify-center border border-red-300">
-            <div className="grid items-center col-span-2 justify-center h-full bg bg-gray-300">
-              <h1 className="text-2xl ms-142 font-bold">Cristofer Avilés Vega</h1>
+        <div className="grid grid-cols-[33.3%_33.3%_33.3%] items-center justify-center">
+            <div className="grid items-center col-span-2 justify-center h-full bg bg-gray-500">
+              <h1 className="text-2xl ms-142 font-bold text-white drop-shadow-lg">Cristofer Avilés Vega</h1>
             </div>
-            <div className="grid grid-cols-[25%_25%_25%_25%] items-center justify-center h-full max-h-[100%] min-h-[100%] bg bg-gray-300">
+            <div className="grid grid-cols-[25%_25%_25%_25%] items-center justify-center h-full max-h-[100%] min-h-[100%] bg bg-gray-500">
               <Link
                 href="/"
                 className="grid grid-cols-[35%_65%] h-full justify-center items-center max-h-[100%] min-h-[100%]"
               >
                 <div
-                  className="w-full h-full max-h-[100%] min-h-[100%] grid justify-center"
+                  className="w-full h-full max-h-[100%] min-h-[100%] grid justify-center items-center"
                 >
                   <img 
-                    src="perfil.png"
-                    className="max-h-[100%] min-h-[100%] h-[100%] m-0 p-0"
+                    src="iconos/perfil.png"
+                    className="max-h-[50%] min-h-[50%] h-[50%] m-0 p-0 hover:scale-120 transform transition duration-300 ease-in-out"
+                    style={{border: "2px solid white", borderRadius: "50%"}}
                   ></img>
                 </div>
                 <div
-                  className="grid items-center h-full"
+                  className="grid items-center h-full font-bold text-white drop-shadow-lg"
                 >
                   Perfil
                 </div>
@@ -61,29 +65,32 @@ export default function RootLayout({
                 className="grid grid-cols-[35%_65%] h-full justify-center items-center max-h-[100%] min-h-[100%]"
               >
                 <div
-                  className="w-full h-full max-h-[100%] min-h-[100%] grid justify-center"
+                  className="w-full h-full max-h-[100%] min-h-[100%] grid justify-center items-center"
                 >
                   <img 
-                    src="contacto.png"
-                    className="max-h-[100%] min-h-[100%] h-[100%] m-0 p-0"
+                    src="iconos/contacto.png"
+                    className="max-h-[50%] min-h-[50%] h-[50%] m-0 p-0 hover:scale-120 transform transition duration-300 ease-in-out"
+                    style={{border: "2px solid white", borderRadius: "50%"}}
                   >
 
                   </img>
                 </div>
-                <div>
+                <div
+                  className="grid items-center h-full font-bold text-white drop-shadow-lg"
+                >
                   Contacto
                 </div>
               </Link>
-              <Link
+              {/* <Link
                 href="/muestras"
                 className="grid grid-cols-[35%_65%] h-full justify-center items-center max-h-[100%] min-h-[100%]"
               >
                 <div
-                  className="w-full h-full max-h-[100%] min-h-[100%] grid justify-center"
+                  className="w-full h-full max-h-[100%] min-h-[100%] grid justify-center items-center"
                 >
                   <img 
-                    src="codigo.png"
-                    className="max-h-[100%] min-h-[100%] h-[100%] m-0 p-0"
+                    src="iconos/codigo.png"
+                    className="max-h-[50%] min-h-[50%] h-[50%] m-0 p-0"
                   ></img>
                 </div>
                 <div
@@ -91,19 +98,21 @@ export default function RootLayout({
                 >
                   Muestras
                 </div>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
-          <div className="grid items-center border border-green-300 min-h-[85%] max-h-[85%] h-[85%] min-w-[82.5%] max-w-[82.5%] w-[82.5%] m-auto">
+          <div 
+            style={{background: "linear-gradient(to right, #e8e8e8ff, #e6e5e5ff)"}}
+            className="grid items-center min-h-[85%] max-h-[85%] h-[85%] min-w-[82.5%] max-w-[82.5%] w-[82.5%] m-auto border rounded-3xl bg bg-gray-300">
             
               {children}
                        
           </div>
 
-          <footer className="grid grid-cols-[10%_10%_10%] justify-center border border-red-300 h-full border border-red-300 p-0 m-0">
+          <footer className="grid grid-cols-[10%_10%_10%] justify-center h-full p-0 m-0">
             <a
-              className="flex items-center gap-2 hover:underline hover:underline-offset-4 justify-center"
+              className="flex items-center gap-2 hover:underline hover:underline-offset-4 justify-center text-white font-bold"
               href="https://www.linkedin.com/in/cristofer-avil%C3%A9s-638716203/"
               target="_blank"
               rel="noopener noreferrer"
@@ -112,22 +121,14 @@ export default function RootLayout({
                 aria-hidden
                 src="/linkedin.png"
                 alt="File icon"
-                width={32}
-                height={32}
+                width={48}
+                height={48}
               />
               LinkedIn
             </a>
+            
             <a
-              className="flex items-center gap-2 hover:underline hover:underline-offset-4 justify-center"
-              href="https://www.linkedin.com/in/cristofer-avil%C3%A9s-638716203/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              
-              Proyectos
-            </a>
-            <a
-              className="flex items-center gap-2 hover:underline hover:underline-offset-4 justify-center"
+              className="flex items-center gap-2 hover:underline hover:underline-offset-4 justify-center text-white font-bold"
               href="https://github.com/cavilesv/"
               target="_blank"
               rel="noopener noreferrer"
@@ -136,10 +137,10 @@ export default function RootLayout({
                 aria-hidden
                 src="/globe.svg"
                 alt="Globe icon"
-                width={16}
-                height={16}
+                width={28}
+                height={28}
               />
-              Github →
+              GitHub
             </a>
           </footer>
       </body>

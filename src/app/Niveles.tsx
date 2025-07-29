@@ -1,52 +1,30 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function Niveles( props : { habilidadesTecnicas: { nivel: number }[] })
-{
-    const habilidadesTecnicas = props.habilidadesTecnicas;
+type Habilidad = { nivel: number };
 
-    
-
-    const clasesNiveles: {[key:number]: string} = {
-        1: 'col-span-1',
-        2: 'col-span-2',
-        3: 'col-span-3',
-        4: 'col-span-4',
-        5: 'col-span-5',
-        6: 'col-span-6',
-        7: 'col-span-7',
-        8: 'col-span-8',
-    };
-    
-    //const [demora, setDemora] = useState(-0.3);
-    
-    const getBarraNivel = (nivel:number, demora:number) => {
-        
-        return (<>
-                <div className={`${clasesNiveles[nivel]} h-full text-center`}>
-                    <motion.div
-                        initial={{ opacity: 0.25, width: "0%" }}
-                        animate={{ opacity: 1, width: "100%" }}
-                        transition={{ duration: 2, delay: demora * 0.25 }}
-                        className="w-full h-full border border-black-300"
-                        style={{background: 'linear-gradient(to right, #5f94ffff, #034bdcff , #2442eaff)' }}
-                    >
-                        
-                    </motion.div>
-                </div>
-            </>);
-    };
-
-    return (
-        <div className="grid grid-rows-9 w-full h-full border border-pink-300">
-            {
-                habilidadesTecnicas.map((habilidad:{ nivel: number }, index:number) => (
-                    <div key={index} className="grid grid-cols-8 h-full items-center">
-                        {getBarraNivel(habilidad.nivel, index)}
-                    </div>
-                ))
-            }
+const Niveles = React.memo(function Niveles({ habilidadesTecnicas }: { habilidadesTecnicas: Habilidad[] }) {
+  return (
+    <div className="grid grid-rows-9 w-full h-full">
+      {habilidadesTecnicas.map(({ nivel }, index) => (
+        <div key={index} className="grid grid-cols-8 h-full items-center">
+          <div className={`col-span-${nivel} h-full text-center`}>
+            <motion.div
+              initial={{ opacity: 0.25, width: '0%' }}
+              animate={{ opacity: 0.8, width: '100%' }}
+              transition={{ duration: 2, delay: index * 0.25 }}
+              className="w-full h-full border"
+              style={{
+                background: 'linear-gradient(to right, #a0befcff, #6b93e4ff , #4d65c5ff)'
+              }}
+            />
+          </div>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+});
+
+export default Niveles;
