@@ -49,23 +49,27 @@ const reducer = (state: Estado, action: Accion): Estado => {
   }
 };
 
-const HabilidadItem = React.memo(({ habilidad, index, activo, onHoverIn, onHoverOut }: {
+type HabilidadItemProps = {
   habilidad: typeof habilidadesBlandas[number];
   index: number;
   activo: number | null;
   onHoverIn: (i: number) => void;
   onHoverOut: () => void;
-}) => (
-  <li
-    onMouseEnter={() => onHoverIn(index)}
-    onMouseLeave={onHoverOut}
-    className="w-full h-full grid items-center justify-center transition-colors"
-  >
-    <div className={`text-center w-65 rounded me-25 ${activo === index ? 'bg-blue-600 font-bold text-white' : ''}`}>
-      {habilidad.nombre}
-    </div>
-  </li>
-));
+};
+
+const HabilidadItem = React.memo(
+  ({ habilidad, index, activo, onHoverIn, onHoverOut }: HabilidadItemProps) => (
+    <li
+      onMouseEnter={() => onHoverIn(index)}
+      onMouseLeave={onHoverOut}
+      className="w-full h-full grid items-center justify-center transition-colors"
+    >
+      <div className={`text-center w-65 rounded me-25 ${activo === index ? 'bg-blue-600 font-bold text-white' : ''}`}>
+        {habilidad.nombre}
+      </div>
+    </li>
+  )
+);
 
 export default function Home() {
   const [estado, dispatch] = useReducer(reducer, initialState);

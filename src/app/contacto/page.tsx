@@ -50,11 +50,11 @@ export default function Contacto() {
     setNombreRemitente(event.target.value);
   }
 
-  const correoElectronicoHandle = (event:any) => {
+  const correoElectronicoHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCorreoElectronico(event?.target.value);
   }
 
-  const mensajeHandle = (event:any) => {
+  const mensajeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMensaje(event.target.value);
   }
 
@@ -76,7 +76,7 @@ export default function Contacto() {
     // Expresión regular para validar formato de correo
     const formatoCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    let errores = [];
+    const errores = [];
 
     //#####---VALIDACIONES---################################################################################
     if ( nomRemitente.trim() == "" )
@@ -203,9 +203,9 @@ export default function Contacto() {
           
             <p className="grid items-center justify-center">Si mi perfil le ha resultado de interés o cree que puedo contribuirle en algo no dude en contactarme. <br/>
 
-              <p><b>Teléfono:</b> +56 930148745</p>
-              <p><b>Correo electrónico:</b> cristofer.aviles.v@gmail.com </p>
-            </p>
+              Teléfono: +56 930148745 <br/>
+              Correo electrónico: cristofer.aviles.v@gmail.com </p>
+            
           
         </div>
       </header>
