@@ -104,9 +104,9 @@ export default function HabilidadesTecnicas() {
       </div>
 
       <div className="grid col-span-2 items-center grid-cols-[30%_70%] gap-0">
-        <div className="h-full grid justify-end">
+        <div className="h-full grid">
           <div
-            className="grid justify-center items-center h-full font-bold rounded-bl-3xl w-119 mt-2"
+            className="grid justify-center items-center h-full font-bold rounded-bl-3xl w-full mt-2"
             style={{
               background: "linear-gradient(to right, #383736ff, #a4a4a4ff, #b0b0b0ff)",
               color: "white"
