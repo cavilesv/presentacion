@@ -49,13 +49,15 @@ const reducer = (state: Estado, action: Accion): Estado => {
   }
 };
 
-const HabilidadItem = React.memo(({ habilidad, index, activo, onHoverIn, onHoverOut }: {
+type HabilidadItemProps = {
   habilidad: typeof habilidadesBlandas[number];
   index: number;
   activo: number | null;
   onHoverIn: (i: number) => void;
   onHoverOut: () => void;
-}) => (
+};
+
+const HabilidadItem = ({ habilidad, index, activo, onHoverIn, onHoverOut }: HabilidadItemProps) => (
   <li
     onMouseEnter={() => onHoverIn(index)}
     onMouseLeave={onHoverOut}
@@ -65,7 +67,10 @@ const HabilidadItem = React.memo(({ habilidad, index, activo, onHoverIn, onHover
       {habilidad.nombre}
     </div>
   </li>
-));
+);
+
+// ✅ Paso 2: asignar displayName explícito
+HabilidadItem.displayName = 'HabilidadItem';
 
 export default function Home() {
   const [estado, dispatch] = useReducer(reducer, initialState);
